@@ -28,7 +28,7 @@ Georgio Yammine
     The application support both LIGHT and DARK mode. This can be changed by the user in the top right window using a switch button and this is remembered by the program.
 
 ## Releases
-Application builds can be found under releases for both Windows and Mac devices.
+Application builds can be found under [releases](https://github.com/georgioyammine/Information-Theory-Calculator/releases) for both [Windows] and Mac devices.
 
 You can run the release by opening  bin/Information Theory Calculator[.bat]
 
@@ -76,4 +76,4 @@ You can run the release by opening  bin/Information Theory Calculator[.bat]
 
 ## License
 
-The project is licensed under GPL 3. See [LICENSE](https://raw.githubusercontent.com/brunoborges/fx2048/master/LICENSE) file for the full license.
+The project is licensed under GPL 3. See [LICENSE](https://github.com/georgioyammine/Information-Theory-Calculator/blob/main/LICENSE) file for the full license.
