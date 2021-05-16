@@ -77,3 +77,9 @@ You can run the release by opening  bin/Information Theory Calculator[.bat]
 ## License
 
 The project is licensed under GPL 3. See [LICENSE](https://github.com/georgioyammine/Information-Theory-Calculator/blob/main/LICENSE) file for the full license.
+
+## Preview
+
+![i1](https://user-images.githubusercontent.com/61707078/118400842-103ba680-b66c-11eb-900b-ded125874cf6.PNG)
+![i2](https://user-images.githubusercontent.com/61707078/118400843-116cd380-b66c-11eb-8599-83e001115232.PNG)
+![i3](https://user-images.githubusercontent.com/61707078/118400846-129e0080-b66c-11eb-81f1-a3fde2aee278.PNG)
