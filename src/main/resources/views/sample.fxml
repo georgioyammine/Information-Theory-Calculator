@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import org.controlsfx.control.ToggleSwitch?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="680.0" stylesheets="@../css/styles.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.Controller">
+   <children>
+      <VBox prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="56.0" prefWidth="600.0">
+               <children>
+                  <AnchorPane layoutX="297.0" layoutY="10.0" prefHeight="200.0" prefWidth="60.0" HBox.hgrow="ALWAYS" />
+                  <Label text="Information Theory Calculator" HBox.hgrow="ALWAYS">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </Label>
+                  <AnchorPane prefHeight="200.0" prefWidth="60.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <ToggleSwitch fx:id="styleSwitch" layoutX="165.0" layoutY="19.0" text="LIGHT" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="19.0" />
+                        <Label fx:id="requiredRestartLabel" disable="true" layoutX="202.0" layoutY="34.0" text="requires restart" textFill="#a4a4a4" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="25.0">
+                           <font>
+                              <Font name="System Italic" size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </HBox>
+            <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS">
+              <tabs>
+                <Tab text="Entropy Calculator">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <ScrollPane fitToWidth="true" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <content>
+                                    <VBox prefWidth="683.0" spacing="15.0">
+                                       <children>
+                                          <Label text="Message Text" />
+                                          <TextArea fx:id="entropyText" prefHeight="200.0" prefWidth="200.0" wrapText="true" />
+                                          <HBox alignment="CENTER_LEFT" spacing="20.0">
+                                             <children>
+                                                <ToggleSwitch fx:id="entropyIgnoreCase" text=" Ignore case">
+                                                   <padding>
+                                                      <Insets top="-3.0" />
+                                                   </padding></ToggleSwitch>
+                                                <ToggleSwitch fx:id="entropyIgnoreSpace" layoutX="10.0" layoutY="10.0" text="Ignore spaces">
+                                                   <padding>
+                                                      <Insets top="-3.0" />
+                                                   </padding></ToggleSwitch>
+                                                <AnchorPane HBox.hgrow="ALWAYS">
+                                                   <children>
+                                                      <HBox fx:id="entropyResult" alignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="120.0" AnchorPane.topAnchor="0.0">
+                                                         <children>
+                                                            <Label fx:id="entropy" text="Enter Text and click calculate" />
+                                                         </children>
+                                                      </HBox>
+                                                      <Button fx:id="entropyBtn" mnemonicParsing="false" onAction="#calculateEntropy" text="Calculate Entropy" AnchorPane.rightAnchor="0.0" />
+                                                   </children>
+                                                </AnchorPane>
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                       <padding>
+                                          <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
+                                       </padding>
+                                    </VBox>
+                                 </content></ScrollPane>
+                           </children></AnchorPane>
+                  </content>
+                </Tab>
+                <Tab text="Huffman Encoding">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <ScrollPane fitToHeight="true" fitToWidth="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <content>
+                                    <VBox prefWidth="683.0" spacing="15.0">
+                                       <children>
+                                          <Label text="Message Text" />
+                                          <TextArea fx:id="huffmanText" minHeight="120.0" prefHeight="125.0" prefWidth="200.0" wrapText="true" VBox.vgrow="SOMETIMES" />
+                                          <HBox alignment="CENTER_LEFT" spacing="20.0">
+                                             <children>
+                                                <Label fx:id="charsInfo" text="Enter message and click encode" />
+                                                <AnchorPane HBox.hgrow="ALWAYS">
+                                                   <children>
+                                                      <HBox fx:id="entropyResult1" alignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="120.0" AnchorPane.topAnchor="0.0" />
+                                                      <Button fx:id="huffmanBtn" mnemonicParsing="false" onAction="#encodeHuffman" text="Process and Encode" AnchorPane.rightAnchor="0.0" />
+                                                   </children>
+                                                </AnchorPane>
+                                             </children>
+                                          </HBox>
+                                          <TabPane fx:id="results" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="200.0" tabClosingPolicy="UNAVAILABLE" visible="false" VBox.vgrow="SOMETIMES">
+                                            <tabs>
+                                              <Tab text="Results">
+                                                <content>
+                                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                         <children>
+                                                            <TextArea fx:id="huffmanResults" editable="false" focusTraversable="false" layoutY="-58.0" prefHeight="200.0" prefWidth="200.0" styleClass="resultsArea" wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                         </children>
+                                                      </AnchorPane>
+                                                </content>
+                                              </Tab>
+                                              <Tab text="Symbol Encoding">
+                                                <content>
+                                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                         <children>
+                                                            <TextArea fx:id="huffmanSymbolsEncoding" editable="false" focusTraversable="false" prefHeight="200.0" prefWidth="200.0" styleClass="resultsArea" wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                         </children>
+                                                      </AnchorPane>
+                                                </content>
+                                              </Tab>
+                                                <Tab text="Symbol Frequency">
+                                                   <content>
+                                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                         <children>
+                                                            <TextArea fx:id="huffmanSymbolsFreq" editable="false" focusTraversable="false" prefHeight="200.0" prefWidth="200.0" styleClass="resultsArea" wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                         </children>
+                                                      </AnchorPane>
+                                                   </content>
+                                                </Tab>
+                                                <Tab text="Encoded Message">
+                                                   <content>
+                                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                         <children>
+                                                            <TextArea fx:id="huffmanEncoded" editable="false" focusTraversable="false" prefHeight="200.0" prefWidth="200.0" styleClass="resultsArea" wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                         </children>
+                                                      </AnchorPane>
+                                                   </content>
+                                                </Tab>
+                                            </tabs>
+                                          </TabPane>
+                                       </children>
+                                       <padding>
+                                          <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
+                                       </padding>
+                                    </VBox>
+                                 </content>
+                              </ScrollPane>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                </Tab>
+                  <Tab text="Trifid Cipher">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <ScrollPane fitToHeight="true" fitToWidth="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <content>
+                                    <VBox prefWidth="683.0" spacing="15.0">
+                                       <children>
+                                          <Label text="Message Text" />
+                                          <TextArea fx:id="trifidText" minHeight="120.0" prefHeight="125.0" prefWidth="200.0" wrapText="true" VBox.vgrow="SOMETIMES" />
+                                          <HBox alignment="CENTER_LEFT" spacing="20.0">
+                                             <children>
+                                                <Label text="Key" />
+                                                <TextField fx:id="key" prefWidth="240.0" promptText="optional" HBox.hgrow="NEVER">
+                                                   <HBox.margin>
+                                                      <Insets left="-10.0" />
+                                                   </HBox.margin></TextField>
+                                                <AnchorPane HBox.hgrow="ALWAYS">
+                                                   <children>
+                                                      <HBox alignment="CENTER" spacing="15.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="120.0" AnchorPane.topAnchor="0.0">
+                                                         <children>
+                                                            <RadioButton fx:id="encodeRadio" mnemonicParsing="false" text="Encrypt" />
+                                                            <RadioButton fx:id="decodeRadio" mnemonicParsing="false" text="Decrypt" />
+                                                         </children>
+                                                      </HBox>
+                                                      <Button fx:id="trifidProcess" mnemonicParsing="false" onAction="#processTrifid" text="Process" AnchorPane.rightAnchor="0.0" />
+                                                   </children>
+                                                </AnchorPane>
+                                             </children>
+                                          </HBox>
+                                          <TabPane fx:id="trifidResults" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="200.0" tabClosingPolicy="UNAVAILABLE" visible="false" VBox.vgrow="SOMETIMES">
+                                             <tabs>
+                                                <Tab text="Encoded/Decoded Message">
+                                                   <content>
+                                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                         <children>
+                                                            <TextArea fx:id="cipherResult" editable="false" focusTraversable="false" layoutY="-58.0" prefHeight="200.0" prefWidth="200.0" styleClass="resultsArea" wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                         </children>
+                                                      </AnchorPane>
+                                                   </content>
+                                                </Tab>
+                                                <Tab text="Cipher Alphabet">
+                                                   <content>
+                                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                         <children>
+                                                            <TextArea fx:id="cipherAlphabet" editable="false" focusTraversable="false" prefHeight="200.0" prefWidth="200.0" styleClass="resultsArea" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                         </children>
+                                                      </AnchorPane>
+                                                   </content>
+                                                </Tab>
+                                                <Tab text="Cipher Process">
+                                                   <content>
+                                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                         <children>
+                                                            <TextArea fx:id="cipherProcess" editable="false" focusTraversable="false" prefHeight="200.0" prefWidth="200.0" styleClass="resultsArea" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                         </children>
+                                                      </AnchorPane>
+                                                   </content>
+                                                </Tab>
+                                             </tabs>
+                                          </TabPane>
+                                       </children>
+                                       <padding>
+                                          <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
+                                       </padding>
+                                    </VBox>
+                                 </content>
+                              </ScrollPane>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+              </tabs>
+            </TabPane>
+            <Separator prefWidth="200.0">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <padding>
+                  <Insets left="17.0" right="17.0" />
+               </padding>
+            </Separator>
+            <HBox alignment="CENTER" prefHeight="20.0" prefWidth="600.0" spacing="20.0">
+               <children>
+                  <Label text="ELE 539: Telecommunication Systems " />
+                  <Separator orientation="VERTICAL" prefHeight="200.0">
+                     <padding>
+                        <Insets bottom="-8.0" top="-8.0" />
+                     </padding></Separator>
+                  <Label text="Version 0.1" />
+                  <Separator orientation="VERTICAL" prefHeight="200.0">
+                     <padding>
+                        <Insets bottom="-8.0" top="-8.0" />
+                     </padding></Separator>
+                  <Label onMouseClicked="#goToGithub" style="-fx-cursor: hand;" text="Developed by Georgio Yammine">
+                     <font>
+                        <Font name="System Italic" size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding></HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
