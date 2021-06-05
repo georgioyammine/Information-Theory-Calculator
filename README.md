@@ -2,7 +2,7 @@
 # Information Theory Calculator
 A JavaFX App for doing some stuff related to information theory.
 
-###Author: 
+### Author: 
 Georgio Yammine
 
 ## Application Features:
